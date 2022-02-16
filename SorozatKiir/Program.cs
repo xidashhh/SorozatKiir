@@ -10,6 +10,7 @@ namespace SorozatKiir
     {
         static void Main(string[] args)
         {
+            
         }
     }
 }
