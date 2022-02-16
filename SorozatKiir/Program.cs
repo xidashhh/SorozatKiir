@@ -12,12 +12,30 @@ namespace SorozatKiir
         {
             //2. feladat
 
-            for (int i = 0; i < 10; i++)
+            //for (int i = 0; i < 10; i++)
+            //{
+            //    Console.WriteLine(i+1);
+
+
+            //}
+
+            // 3. feladat
+            int szam;
+            do
+            {
+                Console.Write("Kérem, adjon meg egy egynél nagyobb számot: ");
+                szam = Convert.ToInt32(Console.ReadLine());
+                if (szam <=0)
+                {
+                    Console.WriteLine("Hibás adat!");
+                }
+            } while (szam <= 0);
+
+            for (int i = 0; i < szam; i++)
             {
                 Console.WriteLine(i+1);
-                
-
             }
+
             Console.ReadKey();
         }
     }
