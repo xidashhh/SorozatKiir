@@ -20,18 +20,45 @@ namespace SorozatKiir
             //}
 
             // 3. feladat
-            int szam;
+            // 4. feladat
+            int elsoSzam;
+            int masodikSzam;
+            int min;
+            int max;
+
             do
             {
-                Console.Write("Kérem, adjon meg egy egynél nagyobb számot: ");
-                szam = Convert.ToInt32(Console.ReadLine());
-                if (szam <=0)
+                Console.Write("Kérem, adjon meg egy nullánál nagyobb számot: ");
+                elsoSzam = Convert.ToInt32(Console.ReadLine());
+                if (elsoSzam <=0)
                 {
                     Console.WriteLine("Hibás adat!");
                 }
-            } while (szam <= 0);
+            } while (elsoSzam <= 0);
 
-            for (int i = 0; i < szam; i++)
+
+            do
+            {
+                Console.Write("Kérem, adjon meg egy másik, nullánál nagyobb számot: ");
+                masodikSzam = Convert.ToInt32(Console.ReadLine());
+                if (masodikSzam <=0)
+                {
+                    Console.WriteLine("Hibás adat!");
+                }
+            } while (masodikSzam <= 0 || elsoSzam == masodikSzam);
+
+            if (elsoSzam > masodikSzam)
+            {
+                min = masodikSzam;
+                max = elsoSzam;
+            }
+            else
+            {
+                min = elsoSzam;
+                max = masodikSzam;
+            }
+
+            for (int i = min-1; i < max; i++)
             {
                 Console.WriteLine(i+1);
             }
